@@ -864,6 +864,8 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return R.drawable.flag_venezuela;
             case "vg": //british virgin islands
                 return R.drawable.flag_british_virgin_islands;
+            case "vh": //valhalla
+                return R.drawable.flag_valhalla;
             case "vi": //us virgin islands
                 return R.drawable.flag_us_virgin_islands;
             case "vn": //vietnam
@@ -1389,6 +1391,8 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return "🇻🇪";
             case "vg":
                 return "🇻🇬";
+            case "vh":
+                return "🇻🇭";
             case "vi":
                 return "🇻🇮";
             case "vn":
@@ -1666,6 +1670,7 @@ public class CCPCountry implements Comparable<CCPCountry> {
         countries.add(new CCPCountry("vc", "1", "Saint Vincent &amp; The Grenadines", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("ve", "58", "Venezuela, Bolivarian Republic Of", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("vg", "1", "British Virgin Islands", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("vh", "666", "Valhalla", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("vi", "1", "US Virgin Islands", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("vn", "84", "Vietnam", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("vu", "678", "Vanuatu", DEFAULT_FLAG_RES));

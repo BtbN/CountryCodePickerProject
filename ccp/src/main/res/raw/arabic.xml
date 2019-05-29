@@ -1188,6 +1188,11 @@
             name_code="vg"
             phone_code="1" />
         <country
+            name="Valhalla"
+            english_name="Valhalla"
+            name_code="vh"
+            phone_code="666" />
+        <country
             name="جزر فيرجن الأمريكية"
             english_name="US Virgin Islands"
             name_code="vi"

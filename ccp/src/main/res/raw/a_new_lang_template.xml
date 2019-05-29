@@ -1189,6 +1189,11 @@
             phone_code="1" />
         <country
             name="TODO: replace with  translated country name"
+            english_name="Valhalla"
+            name_code="vh"
+            phone_code="666" />
+        <country
+            name="TODO: replace with  translated country name"
             english_name="US Virgin Islands"
             name_code="vi"
             phone_code="1" />
