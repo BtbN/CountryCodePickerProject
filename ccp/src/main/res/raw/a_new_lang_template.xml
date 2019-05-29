@@ -334,6 +334,11 @@
             phone_code="34" />
         <country
             name="TODO: replace with  translated country name"
+            english_name="Catalonia - Spain"
+            name_code="es/ct"
+            phone_code="34" />
+        <country
+            name="TODO: replace with  translated country name"
             english_name="Ethiopia"
             name_code="et"
             phone_code="251" />

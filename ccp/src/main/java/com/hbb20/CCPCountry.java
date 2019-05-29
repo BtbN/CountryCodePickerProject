@@ -522,6 +522,8 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return R.drawable.flag_eritrea;
             case "es": //spain
                 return R.drawable.flag_spain;
+            case "es/ct": //spain, catalonia
+                return R.drawable.flag_spain_catalonia;
             case "et": //ethiopia
                 return R.drawable.flag_ethiopia;
             case "fi": //finland
@@ -1035,6 +1037,8 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return "🇪🇷";
             case "es":
                 return "🇪🇸";
+            case "es/ct":
+                return "🇪🇸";
             case "et":
                 return "🇪🇹";
             case "fi":
@@ -1492,6 +1496,7 @@ public class CCPCountry implements Comparable<CCPCountry> {
         countries.add(new CCPCountry("eg", "20", "Egypt", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("er", "291", "Eritrea", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("es", "34", "Spain", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("es/ct", "34", "Catalonia - Spain", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("et", "251", "Ethiopia", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("fi", "358", "Finland", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("fj", "679", "Fiji", DEFAULT_FLAG_RES));

@@ -333,6 +333,11 @@
             name_code="es"
             phone_code="34" />
         <country
+            name="Catalonia - Spain"
+            english_name="Catalonia - Spain"
+            name_code="es/ct"
+            phone_code="34" />
+        <country
             name="أثيوبيا"
             english_name="Ethiopia"
             name_code="et"
