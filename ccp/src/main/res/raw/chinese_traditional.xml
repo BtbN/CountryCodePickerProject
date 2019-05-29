@@ -378,6 +378,26 @@
             name_code="gb"
             phone_code="44" />
         <country
+            name="England - United Kingdom"
+            english_name="England - United Kingdom"
+            name_code="gb/eng"
+            phone_code="44" />
+        <country
+            name="Northern Ireland - United Kingdom"
+            english_name="Northern Ireland - United Kingdom"
+            name_code="gb/nir"
+            phone_code="44" />
+        <country
+            name="Scotland - United Kingdom"
+            english_name="Scotland - United Kingdom"
+            name_code="gb/sct"
+            phone_code="44" />
+        <country
+            name="Wales - United Kingdom"
+            english_name="Wales - United Kingdom"
+            name_code="gb/wls"
+            phone_code="44" />
+        <country
             name="格林納達"
             english_name="Grenada"
             name_code="gd"

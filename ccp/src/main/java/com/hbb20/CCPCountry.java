@@ -540,6 +540,14 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return R.drawable.flag_gabon;
             case "gb": //united kingdom
                 return R.drawable.flag_united_kingdom;
+            case "gb/eng": //united kingdom, england
+                return R.drawable.flag_united_kingdom_england;
+            case "gb/nir": //united kingdom, northern ireland
+                return R.drawable.flag_united_kingdom_northern_ireland;
+            case "gb/sct": //united kingdom, scotland
+                return R.drawable.flag_united_kingdom_scotland;
+            case "gb/wls": //united kingdom, wales
+                return R.drawable.flag_united_kingdom_wales;
             case "gd": //grenada
                 return R.drawable.flag_grenada;
             case "ge": //georgia
@@ -1045,6 +1053,14 @@ public class CCPCountry implements Comparable<CCPCountry> {
                 return "🇬🇦";
             case "gb":
                 return "🇬🇧";
+            case "gb/eng":
+                return "🇬🇧";
+            case "gb/nir":
+                return "🇬🇧";
+            case "gb/sct":
+                return "🇬🇧";
+            case "gb/wls":
+                return "🇬🇧";
             case "gd":
                 return "🇬🇩";
             case "ge":
@@ -1485,6 +1501,10 @@ public class CCPCountry implements Comparable<CCPCountry> {
         countries.add(new CCPCountry("fr", "33", "France", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("ga", "241", "Gabon", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("gb", "44", "United Kingdom", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("gb/eng", "44", "England - United Kingdom", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("gb/nir", "44", "Northern Ireland - United Kingdom", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("gb/sct", "44", "Scotland - United Kingdom", DEFAULT_FLAG_RES));
+        countries.add(new CCPCountry("gb/wls", "44", "Wales - United Kingdom", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("gd", "1", "Grenada", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("ge", "995", "Georgia", DEFAULT_FLAG_RES));
         countries.add(new CCPCountry("gf", "594", "French Guyana", DEFAULT_FLAG_RES));

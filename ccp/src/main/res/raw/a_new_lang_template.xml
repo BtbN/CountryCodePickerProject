@@ -379,6 +379,26 @@
             phone_code="44" />
         <country
             name="TODO: replace with  translated country name"
+            english_name="England - United Kingdom"
+            name_code="gb/eng"
+            phone_code="44" />
+        <country
+            name="TODO: replace with  translated country name"
+            english_name="Northern Ireland - United Kingdom"
+            name_code="gb/nir"
+            phone_code="44" />
+        <country
+            name="TODO: replace with  translated country name"
+            english_name="Scotland - United Kingdom"
+            name_code="gb/sct"
+            phone_code="44" />
+        <country
+            name="TODO: replace with  translated country name"
+            english_name="Wales - United Kingdom"
+            name_code="gb/wls"
+            phone_code="44" />
+        <country
+            name="TODO: replace with  translated country name"
             english_name="Grenada"
             name_code="gd"
             phone_code="1" />
