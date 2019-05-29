@@ -8,6 +8,8 @@ import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.os.ConfigurationCompat;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
@@ -184,7 +186,7 @@ public class CountryCodePicker extends RelativeLayout {
         }
         removeAllViewsInLayout();
         //at run time, match parent value returns LayoutParams.MATCH_PARENT ("-1"), for some android xml preview it returns "fill_parent"
-        if (attrs != null && xmlWidth != null && (xmlWidth.equals(LayoutParams.MATCH_PARENT + "") || xmlWidth.equals(LayoutParams.FILL_PARENT + "") || xmlWidth.equals("fill_parent") || xmlWidth.equals("match_parent"))) {
+        if (attrs != null && xmlWidth != null && (xmlWidth.equals(LayoutParams.MATCH_PARENT + "") || xmlWidth.equals("fill_parent") || xmlWidth.equals("match_parent"))) {
             holderView = mInflater.inflate(R.layout.layout_full_width_code_picker, this, true);
         } else {
             holderView = mInflater.inflate(R.layout.layout_code_picker, this, true);
@@ -398,7 +400,7 @@ public class CountryCodePicker extends RelativeLayout {
             if (isInEditMode()) {
                 contentColor = a.getColor(R.styleable.CountryCodePicker_ccp_contentColor, DEFAULT_UNSET);
             } else {
-                contentColor = a.getColor(R.styleable.CountryCodePicker_ccp_contentColor, context.getResources().getColor(R.color.defaultContentColor));
+                contentColor = a.getColor(R.styleable.CountryCodePicker_ccp_contentColor, ContextCompat.getColor(context, R.color.defaultContentColor));
             }
             if (contentColor != DEFAULT_UNSET) {
                 setContentColor(contentColor);
@@ -409,7 +411,7 @@ public class CountryCodePicker extends RelativeLayout {
             if (isInEditMode()) {
                 borderFlagColor = a.getColor(R.styleable.CountryCodePicker_ccp_flagBorderColor, 0);
             } else {
-                borderFlagColor = a.getColor(R.styleable.CountryCodePicker_ccp_flagBorderColor, context.getResources().getColor(R.color.defaultBorderFlagColor));
+                borderFlagColor = a.getColor(R.styleable.CountryCodePicker_ccp_flagBorderColor, ContextCompat.getColor(context, R.color.defaultBorderFlagColor));
             }
             if (borderFlagColor != 0) {
                 setFlagBorderColor(borderFlagColor);
@@ -689,7 +691,7 @@ public class CountryCodePicker extends RelativeLayout {
     }
 
     private Language getCCPLanguageFromLocale() {
-        Locale currentLocale = context.getResources().getConfiguration().locale;
+        Locale currentLocale = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0);
 //        Log.d(TAG, "getCCPLanguageFromLocale: current locale language" + currentLocale.getLanguage());
         for (Language language : Language.values()) {
             if (language.getCode().equalsIgnoreCase(currentLocale.getLanguage())) {
@@ -846,6 +848,16 @@ public class CountryCodePicker extends RelativeLayout {
         currentCountryGroup = CCPCountryGroup.getCountryGroupForPhoneCode(getSelectedCountryCodeAsInt());
     }
 
+    @SuppressWarnings("deprecation")
+    private String getFormattedNumber(String phoneNumber, String defaultCountryIso)
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return PhoneNumberUtils.formatNumber(phoneNumber, defaultCountryIso);
+        } else {
+            return PhoneNumberUtils.formatNumber(phoneNumber);
+        }
+    }
+
     /**
      * updates hint
      */
@@ -856,11 +868,7 @@ public class CountryCodePicker extends RelativeLayout {
             if (exampleNumber != null) {
                 formattedNumber = exampleNumber.getNationalNumber() + "";
 //                Log.d(TAG, "updateHint: " + formattedNumber);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    formattedNumber = PhoneNumberUtils.formatNumber(getSelectedCountryCodeWithPlus() + formattedNumber, getSelectedCountryNameCode());
-                } else {
-                    formattedNumber = PhoneNumberUtils.formatNumber(getSelectedCountryCodeWithPlus() + formattedNumber);
-                }
+                formattedNumber = getFormattedNumber(getSelectedCountryCodeWithPlus() + formattedNumber, getSelectedCountryNameCode());
                 formattedNumber = formattedNumber.substring(getSelectedCountryCodeWithPlus().length()).trim();
 //                Log.d(TAG, "updateHint: after format " + formattedNumber + " " + selectionMemoryTag);
             } else {
@@ -2226,7 +2234,7 @@ public class CountryCodePicker extends RelativeLayout {
      */
     public boolean detectLocaleCountry(boolean loadDefaultWhenFails) {
         try {
-            String localeCountryISO = context.getResources().getConfiguration().locale.getCountry();
+            String localeCountryISO = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0).getCountry();
             if (localeCountryISO == null || localeCountryISO.isEmpty()) {
                 if (loadDefaultWhenFails) {
                     resetToDefaultCountry();
